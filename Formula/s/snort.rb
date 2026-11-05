@@ -1,8 +1,8 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://github.com/snort3/snort3/archive/refs/tags/3.12.4.0.tar.gz"
-  sha256 "5bab33f703ca09b74bc2de72d16d8be59c67ebb98dbd45e50c30989b5cdd510f"
+  url "https://github.com/snort3/snort3/archive/refs/tags/3.13.2.0.tar.gz"
+  sha256 "298367524a31f0d4725ef12b2b06265b4e76e6545f990ae3dc3b5e4c10f6e0ea"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
@@ -39,14 +39,6 @@ class Snort < Formula
   on_linux do
     depends_on "libunwind"
     depends_on "zlib-ng-compat"
-  end
-
-  # Apply open PR for OpenSSL 4.0 support
-  patch do
-    url "https://github.com/snort3/snort3/commit/286352b0e3f3e0798666d4f78ca35668d8695ab5.patch?full_index=1"
-    sha256 "8707359cf1854a85bf7f48e8e8b5a949739e0965ee55078bfdef033055971fc7"
-    type :unofficial
-    resolves "https://github.com/snort3/snort3/pull/477"
   end
 
   deny_network_access!
